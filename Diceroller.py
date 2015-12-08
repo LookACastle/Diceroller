@@ -4,7 +4,7 @@ import re
 #Get variables from input string
 def read_input_string(input_string):
     if not "d" in input_string.lower():
-        raise ValueError("Input must be in the format [rolls]d[sides]+/-[sum to add]")
+        raise ValueError("Input must be in the format [rolls]d[sides]+/-[Modifiers]")
 
     number_of_rolls, rest = input_string.lower().split("d")
     number_of_rolls = int(number_of_rolls)
