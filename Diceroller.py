@@ -9,6 +9,11 @@ def read_input_string(input_string):
     number_of_rolls, rest = input_string.lower().split("d")
     number_of_rolls = int(number_of_rolls)
 
+    if "w" in rest:
+        rest, weapon_id = rest.split("w")
+    else:
+        weapon_id = None
+
     operator_index = re.search("\+|-", rest)
 
     if operator_index:
@@ -18,7 +23,7 @@ def read_input_string(input_string):
         add_sum = None
         dice_size = int(rest)
 
-    return number_of_rolls, dice_size, add_sum
+    return number_of_rolls, dice_size, add_sum, weapon_id
 
 #Dice function
 def roll(dice_sides, rolls):
@@ -44,10 +49,12 @@ print(roll(4, 3))
 while True:
     input_string = raw_input("Dice roll: ")
 
-    number_of_rolls, dice_size, add_sum = read_input_string(input_string)
+    number_of_rolls, dice_size, add_sum, weapon_id = read_input_string(input_string)
 
     sum = roll(dice_size, number_of_rolls)
     if sum not in ["a crit!", "a fumble!"] and add_sum:
         sum += add_sum
 
     print "You rolled a total of: ", sum
+    if weapon_id:
+        print weapon_id
