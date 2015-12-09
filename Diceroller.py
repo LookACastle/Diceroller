@@ -24,7 +24,9 @@ def read_input_string(input_string):
 def roll(dice_sides, rolls):
     dice_sum = 0
     for x in range(rolls):
-        dice_sum += random.randint(1, dice_sides)
+        curr_roll = random.randint(1, dice_sides)
+        dice_sum += curr_roll
+        print "you rolled a: ", curr_roll, "on roll no. ", x+1
 
         #Crits and fumbles
         if dice_sides == 20 and dice_sum == 1 and rolls == 1:
@@ -48,4 +50,4 @@ while True:
     if sum not in ["a crit!", "a fumble!"] and add_sum:
         sum += add_sum
 
-    print "You rolled: ", sum
+    print "You rolled a total of: ", sum
