@@ -32,13 +32,13 @@ def roll(dice_sides, rolls):
 print(roll(4, 3))
 """
 
-input_string = raw_input("Dice roll: ")
+while True:
+    input_string = raw_input("Dice roll: ")
 
-number_of_rolls, dice_size, add_sum = read_input_string(input_string)
+    number_of_rolls, dice_size, add_sum = read_input_string(input_string)
 
-sum = roll(dice_size, number_of_rolls)
-if add_sum:
-    sum += add_sum
+    sum = roll(dice_size, number_of_rolls)
+    if add_sum:
+        sum += add_sum
 
-print "you rolled: ", sum
-wait = input(" ")
+    print "You rolled: ", sum
