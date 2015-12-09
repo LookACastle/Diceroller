@@ -25,6 +25,12 @@ def roll(dice_sides, rolls):
     dice_sum = 0
     for x in range(rolls):
         dice_sum += random.randint(1, dice_sides)
+
+        #Crits and fumbles
+        if dice_sides == 20 and dice_sum == 1:
+            dice_sum = "a fumble!"
+        elif dice_sides == 20 and dice_sum == 20:
+            dice_sum = "a crit!"
     return(dice_sum)
 
 #Debugging print
@@ -39,7 +45,7 @@ while True:
     number_of_rolls, dice_size, add_sum = read_input_string(input_string)
 
     sum = roll(dice_size, number_of_rolls)
-    if add_sum:
+    if sum not in ["a crit!", "a fumble!"] and add_sum:
         sum += add_sum
 
     print "You rolled: ", sum
