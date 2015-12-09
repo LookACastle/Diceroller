@@ -27,9 +27,9 @@ def roll(dice_sides, rolls):
         dice_sum += random.randint(1, dice_sides)
 
         #Crits and fumbles
-        if dice_sides == 20 and dice_sum == 1:
+        if dice_sides == 20 and dice_sum == 1 and rolls == 1:
             dice_sum = "a fumble!"
-        elif dice_sides == 20 and dice_sum == 20:
+        elif dice_sides == 20 and dice_sum == 20 and rolls == 1:
             dice_sum = "a crit!"
     return(dice_sum)
 
