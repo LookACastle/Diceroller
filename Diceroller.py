@@ -32,6 +32,7 @@ def roll(dice_sides, rolls):
 print(roll(4, 3))
 """
 
+#Runs the functions
 while True:
     input_string = raw_input("Dice roll: ")
 
