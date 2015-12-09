@@ -28,7 +28,9 @@ def roll(dice_sides, rolls):
     return(dice_sum)
 
 #Debugging print
+"""
 print(roll(4, 3))
+"""
 
 input_string = raw_input("Dice roll: ")
 
