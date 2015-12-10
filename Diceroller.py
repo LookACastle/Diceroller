@@ -52,10 +52,12 @@ def roll(dice_sides, rolls, individual_rolls):
 
         #Crits and fumbles
         if dice_sides == 20 and dice_sum == 1 and rolls == 1:
-            dice_sum = "a fumble!"
+            luck = "bad"
         elif dice_sides == 20 and dice_sum == 20 and rolls == 1:
-            dice_sum = "a crit!"
-    return(dice_sum)
+            luck = "good"
+        else:
+            luck = None
+    return(dice_sum, luck)
 
 
 #Runs the functions
@@ -64,10 +66,17 @@ while True:
 
     number_of_rolls, dice_size, add_sum, weapon_id, individual_rolls = read_input_string(input_string)
 
-    sum = roll(dice_size, number_of_rolls, individual_rolls)
-    if sum not in ["a crit!", "a fumble!"] and add_sum:
+    sum, luck = roll(dice_size, number_of_rolls, individual_rolls)
+    if luck == None and add_sum:
         sum += add_sum
 
-    print "You rolled a total of: ", sum
+
+    if luck == None:
+        print "You rolled a total of: ", sum
+    elif luck == "good":
+        print "You rolled a critical hit!"
+    elif luck == "bad":
+        print "You rolled a fumble!"
+
     if weapon_id:
         print weapon_id
