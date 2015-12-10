@@ -31,7 +31,7 @@ def roll(dice_sides, rolls):
     for x in range(rolls):
         curr_roll = random.randint(1, dice_sides)
         dice_sum += curr_roll
-        print "you rolled a: ", curr_roll, "on roll no. ", x+1
+        print "you rolled a:", curr_roll, "on roll no.", x+1
 
         #Crits and fumbles
         if dice_sides == 20 and dice_sum == 1 and rolls == 1:
