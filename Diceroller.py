@@ -47,9 +47,9 @@ def roll(dice_sides, rolls, individual_rolls):
             pass
 
         #Crits and fumbles
-        if dice_sides == 20 and dice_sum == 1 and rolls == 1 or dice_sides == 20 and dice_sum == 1 and individual_rolls == True:
+        if dice_sides == 20 and dice_sum == 1 and rolls == 1:
             dice_sum = "a fumble!"
-        elif dice_sides == 20 and dice_sum == 20 and rolls == 1 or dice_sides == 20 and dice_sum == 20 and individual_rolls == True:
+        elif dice_sides == 20 and dice_sum == 20 and rolls == 1:
             dice_sum = "a crit!"
     return(dice_sum)
 
