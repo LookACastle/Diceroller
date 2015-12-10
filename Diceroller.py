@@ -57,17 +57,19 @@ def roll(dice_sides, rolls, individual_rolls):
             dice_sum = "a crit!"
     return(dice_sum)
 
+print "format is: [amount of dice]d[sides on dice][+/-/" " a number to add or substract at the ende][i/" " to show every single throw]"
 
 #Runs the functions
 while True:
     input_string = raw_input("Dice roll: ")
 
-    number_of_rolls, dice_size, add_sum, weapon_id, individual_rolls = read_input_string(input_string)
+    if input_string:
+        number_of_rolls, dice_size, add_sum, weapon_id, individual_rolls = read_input_string(input_string)
 
-    sum = roll(dice_size, number_of_rolls, individual_rolls)
-    if sum not in ["a crit!", "a fumble!"] and add_sum:
-        sum += add_sum
+        sum = roll(dice_size, number_of_rolls, individual_rolls)
+        if sum not in ["a crit!", "a fumble!"] and add_sum:
+            sum += add_sum
 
-    print "You rolled a total of: ", sum
-    if weapon_id:
-        print weapon_id
+        print "You rolled a total of: ", sum
+        if weapon_id:
+            print weapon_id
