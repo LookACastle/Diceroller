@@ -67,8 +67,8 @@ while True:
 
     if input_string:
         number_of_rolls, dice_size, add_sum, weapon_id, individual_rolls = read_input_string(input_string)
-        
-        sum = roll(dice_size, number_of_rolls, individual_rolls)
+
+        sum, luck = roll(dice_size, number_of_rolls, individual_rolls)
         if sum not in ["a crit!", "a fumble!"] and add_sum:
             sum += add_sum
 
